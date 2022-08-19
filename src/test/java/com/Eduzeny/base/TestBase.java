@@ -1,5 +1,6 @@
 package com.Eduzeny.base;
 
+import com.Eduzeny.utilities.ConfigurationReader;
 import com.Eduzeny.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -17,7 +18,8 @@ public class TestBase {
     public void setUpMethod(){
         //Open browser
         // driver = WebDriverFactory.getDriver("chrome");
-        driver = WebDriverFactory.getDriver("chrome");
+        //driver = WebDriverFactory.getDriver("chrome");
+        driver= WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
         driver.manage().window().maximize();
         //Providing extra time for our driver before it throws NoSuchElementException
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
