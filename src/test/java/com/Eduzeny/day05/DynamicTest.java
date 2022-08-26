@@ -48,6 +48,7 @@ public class DynamicTest {
             dynamicLoadingPage.password.sendKeys("incorrectpassword");
 
 
+
 //7. Click to Submit button
             dynamicLoadingPage.loginBtn.click();
 
